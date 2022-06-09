@@ -9,7 +9,7 @@ app.use(express.json())
 
 //ROUTES
 app.get("/", (req, res) => {
-    res.send("This is a test")
+    res.send("Homepage")
 })
 
 //Create blog post
