@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 //Create blog post
 app.post("/blog", async(req, res) => {
     try {
-        const {name, description} = req.body
-        const postBlog = await pool.query("INSERT INTO posts (name, description) VALUES($1, $2) RETURNING *;", [name, description])
+        const {info} = req.body
+        const postBlog = await pool.query("INSERT INTO posts_json (info) VALUES($1) RETURNING *;", [info])
     
         res.json(postBlog)
     } catch (error) {
