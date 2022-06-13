@@ -42,7 +42,7 @@ app.get("/blog", async(req, res) => {
 app.get("/blog/:id", async(req, res) => {
     try {
         const {id} = req.params
-        const getBlog = await pool.query("SELECT * FROM posts WHERE pid = $1;", [id])
+        const getBlog = await pool.query("SELECT * FROM posts_json WHERE pjid = $1;", [id])
 
         res.json(getBlog)
     } catch (error) {
